@@ -17,7 +17,7 @@ jobs:
         username: ec2-user
         key: ${{ secrets.EC2_KEY }}
         script: |
-          sudo yum install httpd -y
+          sudo yum install nginx  -y
           cd /var/www/html
           git pull
-          sudo systemctl restart httpd
+          sudo systemctl restart nginx
