@@ -18,6 +18,9 @@ jobs:
         key: ${{ secrets.EC2_KEY }}
         script: |
           sudo yum install nginx  -y
-          cd /var/www/html
+          cd /var/www/
+          mkdir html
+          cd html
+          touch index.html
           git pull
           sudo systemctl restart nginx
