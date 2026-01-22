@@ -23,4 +23,6 @@ jobs:
           cd html
           touch index.html
           git pull
-          sudo systemctl restart nginx
+          sudo systemctl stop  nginx
+          sudo systemctl install httpd
+          sudo systemctl start httpd
