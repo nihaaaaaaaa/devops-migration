@@ -17,12 +17,11 @@ jobs:
         username: ec2-user
         key: ${{ secrets.EC2_KEY }}
         script: |
-          sudo yum install nginx  -y
+          sudo yum install httpd -y
           cd /var/www/
           mkdir html
           cd html
           touch index.html
           git pull
-          sudo systemctl stop  nginx
-          sudo systemctl install httpd
-          sudo systemctl start httpd
+        
+          sudo systemctl restart httpd
